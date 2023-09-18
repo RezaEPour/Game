@@ -1,29 +1,46 @@
-function info(person) {
-                
-    return "Hello " + person.Name + "  is your number " + person.number;
+// makes a type that every contact should have
+interface Person {
+    name: string;
+    number: string;
+  
   }
 
+let contacts: Person[] = []
+// adds Contacts
+function addContact(person: Person) {
 
+    contacts.push(person)
+                
+  }
 
+// adds some contacts
+addContact({name: "messi",number: "09196538542"})
 
+addContact({name: "ali",number: "09196538345"})
 
-const obj = info({Name: "messi",number: "09196538542"})
+addContact({name: "sali",number: "091965383"})
 
-const obj1 = info({Name: "ali",number: "09196538345"})
+// goes threw every contact and sees if the name that we have searched is in the contacts
 function search(name){
+    for (let i = 0; i < contacts.length; i++ ) {
 
-    if (name === "messi"){
+
+     console.log(i)
+     console.log(contacts[i].name)
+
+
+
+    if (name === contacts[i].name ){
 
         console.log("i found Him!")
-    } else if (name === "ali"){
-
-        console.log("i found Him!")
-
     } else {
 
         console.log("i did not find him")
     }
-}
 
-//search("noah")
-//console.log(obj1,obj)
+    }
+    
+}
+// searches
+search("messi")
+
